@@ -1,34 +1,14 @@
-var as = document.getElementsByTagName('a');
+function ocultarContenido(contenido, enlace) {
+	
+	var contenidox = document.getElementById(contenido);
 
-var ps = document.getElementsByTagName('p');
+	if (contenidox.style.display != "none") {
 
-console.log(ps)
-/*
-console.log(as)
-var sumaAs = 0;
-*/
-var penultimo;
-
-var enlacesPru = 0;
-
-for (var i = 0; i < as.length; i++) {
-	/*
-	sumaAs++;
-	console.log(as[i])
-	*/
-	if (as[i] == "http://prueba/") {
-		enlacesPru++;
+		contenidox.style.display = "none";
+		enlace.innerHTML = "Mostrar contenidos";
 	}
-
-	if (i == (as.length-1)) {
-		penultimo = as[i];
+	else{
+		contenidox.style.display = "block";
+		enlace.innerHTML = "Ocultar contenidos";
 	}
 }
-
-alert("numero de enlaces " + as.length);
-
-alert("Penultimo enlace " + penultimo);
-
-alert("Enlaces que dirigen a http://prueba/ :" + enlacesPru);
-
-

@@ -2,34 +2,134 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-        <title>Ejercicio 14 - DOM básico y atributos XHTML</title>
+        <title>Ejercicio 15 - Información sobre eventos</title>
+        <style type="text/css">
+            body {
+                font-family: arial, helvetica;
+            }
+            #info {
+                width: 160px;
+                border: thin solid silver;
+                padding: 0.5em;
+                position: fixed;
+            }
+            #info h1 {
+                margin: 0;
+            }
+
+        </style>
         <script type="text/javascript">
-            function muestraOculta() {
+            function muestraInformacion(mensaje) {
+            	document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
+            	for(var i=1; i<mensaje.length; i++) {
+            		document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+            	}
+            }
+
+            function movimientoRaton(e, x, y, clix, cliy){ 
+                console.log(e);
+                x.innerHTML = e.screenX;
+                y.innerHTML = e.screenY;
+                clix.innerHTML = e.clientX;
+                cliy.innerHTML = e.clientY;
+                console.log(e.clientX);
+                console.log(e.clientY);
+            }
+
+            function letraPresionada(e, ca, co){
+                console.log(e.type)
+                ca.innerHTML = e.key;
+                co.innerHTML = e.keyCode;
+                console.log(e.keyCode)
+                console.log(e.key)
+                if (e.key = true) {
+                    back
+                }
             }
         </script>
     </head>
-    <body>
-        <p id="contenidos_1">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
-            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
-            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
-        </p>
-        <a id="enlace_1" onclick="ocultarContenido('contenidos_1', this)" href="#">Ocultar contenidos</a>
-        <br />
-        <p id="contenidos_2">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
-            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
-            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
-        </p>
-        <a id="enlace_2" onclick="ocultarContenido('contenidos_2', this)" href="#">Ocultar contenidos</a>
-        <br />
-        <p id="contenidos_3">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et,
-            luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis
-            pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.
-        </p>
-        <a id="enlace_3" onclick="ocultarContenido('contenidos_3', this)" href="#">Ocultar contenidos</a>
+    <body onmousemove="movimientoRaton(event, x, y, clientex, clientey)" onkeydown="letraPresionada(event, caracter,codigo)">
+        <div id="info">
+            <div>
+                <h1>
+                    Ratón
+                </h1>
+                <p>
+                    Navegador [<label id="x">0</label>,<label id="y">0</label>]
+                </p>
+                <p>
+                    pagina [<label id="clientex">0</label>,<label id="clientey">0</label>]
+                </p>
+            </div>
 
-        <script type="text/javascript" src="./assets/js/codigo.js"></script>
+            <div>
+                <h1>
+                    Teclado
+                </h1>
+                <p>
+                    Caracter [<label id="caracter">0</label>]
+                </p>
+                <p>
+                    Codigo [<label id="codigo">0</label>]
+                </p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> 
     </body>
 </html>

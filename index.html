@@ -26,52 +26,24 @@
             	}
             }
 
-            function movimientoRaton(e, x, y, clix, cliy){ 
+            function onlyAlpha(e, target){
+            	if (e.keyCode>=65 && e.keyCode<=90 || e.keyCode>=97 && e.keyCode<=122) {
+            		return true;
+            	}
+            	else{
+            		return false;
+            	}
                 console.log(e);
-                x.innerHTML = e.screenX;
-                y.innerHTML = e.screenY;
-                clix.innerHTML = e.clientX;
-                cliy.innerHTML = e.clientY;
-                console.log(e.clientX);
-                console.log(e.clientY);
             }
 
-            function letraPresionada(e, ca, co){
-                console.log(e.type)
-                ca.innerHTML = e.key;
-                co.innerHTML = e.keyCode;
-                console.log(e.keyCode)
-                console.log(e.key)
-                if (e.key = true) {
-                    back
-                }
-            }
         </script>
     </head>
-    <body onmousemove="movimientoRaton(event, x, y, clientex, clientey)" onkeydown="letraPresionada(event, caracter,codigo)">
+    <body>
         <div id="info">
             <div>
-                <h1>
-                    Ratón
-                </h1>
-                <p>
-                    Navegador [<label id="x">0</label>,<label id="y">0</label>]
-                </p>
-                <p>
-                    pagina [<label id="clientex">0</label>,<label id="clientey">0</label>]
-                </p>
-            </div>
-
-            <div>
-                <h1>
-                    Teclado
-                </h1>
-                <p>
-                    Caracter [<label id="caracter">0</label>]
-                </p>
-                <p>
-                    Codigo [<label id="codigo">0</label>]
-                </p>
+               <form name="formulario">
+               		<input type="text" name="soloLetras" placeholder="solo letras" onkeypress="return onlyAlpha(event, this)">
+               </form>
             </div>
         </div>
         <br />
